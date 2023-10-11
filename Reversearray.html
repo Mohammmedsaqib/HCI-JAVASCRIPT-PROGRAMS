@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse Array</title>
+    <script>
+        function reverseArray() {
+            const inputElement = document.getElementById("arrayInput");
+            const resultElement = document.getElementById("result");
+
+            // Get the input string and split it into an array using a delimiter (e.g., comma)
+            const inputString = inputElement.value;
+            const array = inputString.split(',');
+
+            // Remove leading and trailing spaces from each element in the array
+            const trimmedArray = array.map(element => element.trim());
+
+            // Reverse the array
+            const reversedArray = trimmedArray.reverse();
+
+            // Display the reversed array elements as a list
+            const listItems = reversedArray.map(element => `<li>${element}</li>`);
+            resultElement.innerHTML = `<ul>${listItems.join('')}</ul>`;
+        }
+    </script>
+</head>
+<body>
+    <label for="arrayInput">Enter array elements (comma-separated):</label>
+    <input id="arrayInput" type="text">
+    <button onclick="reverseArray()">Reverse Array</button>
+    <div id="result"></div>
+</body>
+</html>

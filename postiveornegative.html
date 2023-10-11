@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positive or Negative</title>
+    <script>
+        function checkPositiveOrNegative() 
+        {
+            const inputNumber = parseFloat(document.getElementById("numberInput").value);
+            const resultElement = document.getElementById("result");
+
+            if (!isNaN(inputNumber)) 
+            {
+                if (inputNumber > 0) 
+                {
+                    resultElement.textContent = "The number is positive.";
+                } 
+                else if (inputNumber < 0) 
+                {
+                    resultElement.textContent = "The number is negative.";
+                } 
+                else 
+                {
+                    resultElement.textContent = "The number is zero.";
+                }
+            } 
+            else 
+            {
+                resultElement.textContent = "Invalid input. Please enter a valid number.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <label for="numberInput">Enter a number:</label>
+    <input id="numberInput" type="text">
+    <button onclick="checkPositiveOrNegative()">Check</button>
+    <p id="result"></p>
+</body>
+</html>
